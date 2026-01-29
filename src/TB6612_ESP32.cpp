@@ -27,11 +27,11 @@ Motor::Motor(int In1pin, int In2pin, int PWMpin, int offset, int STBYpin, int fr
   pinMode(Standby, OUTPUT);
 
   //ESP32REV2.x:
-  //ledcSetup(Channel, freq, resolution);
-  //ledcAttachPin(PWM, Channel);
+  ledcSetup(Channel, freq, resolution);
+  ledcAttachPin(PWM, Channel);
 
   //ESP32REV3.0:
-  ledcAttachChannel(PWM, freq, resolution, Channel);
+  //ledcAttachChannel(PWM, freq, resolution, Channel);
 
 }
 
